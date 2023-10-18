@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online_Shoppers_intention</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+</head>
+<body style="background-image: url('{% static 'image/IMG.jpg' %}')">
+    <h1 style="font-size: x-large;">ONLINE SHOPPERS INTENTION</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="ProductRelated" title="Number of product-related pages visited by the user">ProductRelated:</label>
+        <input type="number" name="ProductRelated" id="ProductRelated" required>
+
+        <label for="ProductRelated_Duration" title="Total duration spent on product-related pages (in seconds)">ProductRelated Duration:</label>
+        <input type="number" step="0.01" name="ProductRelated_Duration" id="ProductRelated_Duration" required>
+
+
+        <label for="ExitRates" title="Exit rate of the website, representing the percentage of exits from all page views">Exit Rates:</label>
+        <input type="number" step="0.01" name="ExitRates" id="ExitRates" required>
+
+        <label for="PageValues" title="Average value of the pages viewed by the user">Page Values:</label>
+        <input type="number" step="0.01" name="PageValues" id="PageValues" required>
+
+        <label for="Month" title="Month of the year when the browsing occurred">Month:</label>
+        <select name="Month" id="Month" required>
+            <option value="">Select a Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
